@@ -12,27 +12,59 @@ if (storedProducts.length === 0)
 },
 {   id:2,
     imageUrl:"https://tse3.mm.bing.net/th/id/OIP.dncGcONHxZprUK6lC4u3bgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
-    name:"Barone",
+    name:"BarOne",
     price:10,
     favourite:false
+},
+{    
+    id:3,
+    imageUrl:"https://m.media-amazon.com/images/I/61Iy5XrzC-L._SL1500_.jpg",
+    name:"Cadbury",
+    price:100,
+    favourite:false,
+},
+{   
+    id:4,
+    imageUrl:"https://tse4.mm.bing.net/th/id/OIP.O3pWtf4BSx-cb9tbekbBiQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Ferrero Rocher",
+    price:50,
+    favourite:false,
 },
 ];
 localStorage.setItem("Chocolate",JSON.stringify(storedProducts));
 }
 
 const container= document.getElementById("productcontainer");
+
+function toggleFavourite(id){
+    storedProducts=storedProducts.map(product=>{
+        if(product.id===id)
+            product.favourite= !product.favourite;
+        return product;
+    });
+    localStorage.setItem("Chocolate",JSON.stringify(storedProducts));
+    displayproduct();
+}
+
+function discountprice(price){
+    return (price - (price*globaloffer/100)).toFixed(2);
+}
+
+function displayproduct(){
 container.innerHTML=``
     
 storedProducts.forEach(product=>{
+    const new1= discountprice(product.price);
     const card=document.createElement('div');
     card.classList.add('card')
     card.innerHTML=`
     <img src ="${product.imageUrl}" alt="${product.name}" height="200px" width="200px" >
     <div class = "card-body">
       <h3>${product.name}</h3>
-      <div class="price">${product.price}</div>
-      <button class="like-button" onClick="toggleFavourite()"></button>
+      <div class="price"><p>₹${new1} <span style="text-decoration: line-through; color:grey;">${product.price}</span><p></div>
+      <button class="like-button ${product.favourite?"liked":""}" onClick="toggleFavourite(${product.id})">&#10084</button>
     </div>`;
     container.appendChild(card);
-
 });
+};
+displayproduct();

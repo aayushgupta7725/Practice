@@ -1,7 +1,7 @@
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
-    background:rgb(246, 232, 162);
+    background: lightgoldenrodyellow;
     color:black;
 }
 header{
@@ -9,6 +9,42 @@ header{
     background: linear-gradient(45deg,red, blue, purple);
     color:white;
     box-shadow: 0 3px 3px 3px rgba(0,0,0,0.4);
+}
+
+.product-container{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    box-shadow: 0 2px rgba(0,0,0,0.4);
+    width:230px;
+    overflow:hidden;
+    transition: transform 0.2s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card-body{
+    padding:5px;
+}
+
+.like-button{
+    border-radius:5px;
+    background:none;
+    cursor:pointer;
+    color: rgba(0,0,0,0.3);
+}
+
+.like-button.liked{
+    color:#e63964;
 }
 footer{
     text-align:center;
