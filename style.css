@@ -1,0 +1,18 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    background:rgb(135,200,235);
+    color:black;
+}
+header{
+    text-align:center;
+    background: linear-gradient(45deg,red, blue, purple);
+    color:white;
+    box-shadow: 0 3px 3px 3px rgba(0,0,0,0.4);
+}
+footer{
+    text-align:center;
+    padding-left:30px;
+    background:purple;
+    color:white;
+}
