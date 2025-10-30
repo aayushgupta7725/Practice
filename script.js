@@ -42,7 +42,6 @@ function toggleFavourite(id){
             product.favourite= !product.favourite;
         return product;
     });
-    localStorage.clear();
     localStorage.setItem("Chocolate",JSON.stringify(storedProducts));
     displayproduct();
 }
