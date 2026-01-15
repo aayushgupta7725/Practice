@@ -1,5 +1,5 @@
 # Practice
-It is a repository for ***practice*** purpose  
+It is a repository for ***practice purpose***  
 ```python
 import cowsay
 name=input("What's your name? ")
