@@ -1,15 +1,16 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';  
+# Practice
+It is a repository for ***practice purpose***  
+```python
+import cowsay
+name=input("What's your name? ")
+print(cowsay.cow(name))
+```  
+>The output of the above program   
 
-<Tabs>
-  <TabItem value="apple" label="Apple" default>
-    This is an apple 🍎
-  </TabItem>
-  <TabItem value="orange" label="Orange">
-    This is an orange 🍊
-  </TabItem>
-  <TabItem value="banana" label="Banana">
-    This is a banana 🍌
-  </TabItem>
-</Tabs>
+ $What's your name? Aayush
+
+![cow saying your name](<Screenshot 2026-01-15 110105.png>)
+
+For webpage, [click here](https://aayushgupta7725.github.io/Practice/)
+
 
