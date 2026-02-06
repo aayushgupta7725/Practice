@@ -12,5 +12,3 @@ print(cowsay.cow(name))
 ![cow saying your name](<Screenshot 2026-01-15 110105.png>)
 
 For webpage, [click here](https://aayushgupta7725.github.io/Practice/)
-
-
