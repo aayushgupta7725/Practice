@@ -11,4 +11,6 @@ print(cowsay.cow(name))
 
 ![cow saying your name](<Screenshot 2026-01-15 110105.png>)
 
-For webpage [click here](https://aayushgupta7725.github.io/Practice/) and User interface [click here](https://www.figma.com/proto/PGfqMACo7ALonx5sqCjcxx/My-choco-app?node-id=0-1&t=OLPrANSp2jIrHCJc-1)
+For webpage, [click here](https://aayushgupta7725.github.io/Practice/)
+
+User interface, [click here](https://www.figma.com/proto/PGfqMACo7ALonx5sqCjcxx/My-choco-app?node-id=0-1&t=OLPrANSp2jIrHCJc-1)
