@@ -35,7 +35,7 @@ jobs:
 
       - name: Check CSS files exist
         run: |
-          if [ -z "$(find . -name '*.css')"]; then
+          if [ -z "$(find . -name '*.css')" ]; then
             echo "ERROR: No CSS Files found"
             exit 1
           else
@@ -44,7 +44,7 @@ jobs:
 
       - name: Check JS files present
         run: |
-          if [ -z $(find . -name '*.js')]; then
+          if [ -z "$(find . -name '*.js')" ]; then
             echo "ERROR: No JS files"
             exit 1
           else
@@ -52,11 +52,11 @@ jobs:
           fi
       - name: Check file size
         run: |
-          if [ $(find . -size +500k)]; then
+          if [ -z "$(find . -size +500k)" ]; then
+            echo "Files under size limit"
+          else
             echo "ERROR: Oversized file present"
             exit 1
-          else
-            echo "Files under size limit"
           fi
 
   # This job only runs if the check job above passes
