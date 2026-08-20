@@ -41,8 +41,7 @@ jobs:
           else
             echo "CSS Files found"
           fi
-      
-      -name: Check 
+
 
   # This job only runs if the check job above passes
   deploy:
