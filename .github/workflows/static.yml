@@ -42,6 +42,14 @@ jobs:
             echo "CSS Files found"
           fi
 
+      - name: Check JS files present
+        run: |
+          if [ -z $(find . -name '*.js')]; then
+            echo "ERROR: No JS files"
+            exit 1
+          else
+            echo "JS files present"
+          fi
 
   # This job only runs if the check job above passes
   deploy:
