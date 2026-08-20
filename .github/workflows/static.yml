@@ -50,6 +50,14 @@ jobs:
           else
             echo "JS files present"
           fi
+      - name: Check file size
+        run: |
+          if [ $(find . -size +500k)]; then
+            echo "ERROR: Oversized file present"
+            exit 1
+          else
+            echo "Files under size limit"
+          fi
 
   # This job only runs if the check job above passes
   deploy:
