@@ -59,7 +59,7 @@ jobs:
             exit 1
           fi
           
-    docker:
+  docker:
     needs: check
     runs-on: ubuntu-latest
     steps:
@@ -80,7 +80,7 @@ jobs:
 
       - name: Push image to Docker Hub
         run: docker push aayushgupta7725/my-website:latest
-        
+
   # This job only runs if the check job above passes
   deploy:
     needs: check
