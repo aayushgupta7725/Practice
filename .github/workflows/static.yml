@@ -58,28 +58,29 @@ jobs:
             echo "ERROR: Oversized file present"
             exit 1
           fi
-
+          
     docker:
-      needs: check
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Login to Docker Hub
-          uses: docker/login-action@v3
-          with:
-            username: ${{ secrets.DOCKERHUB_USERNAME }}
-            password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-        - name: Build image
-          run: docker build -t my-website .
+      - name: Build image
+        run: docker build -t my-website .
 
-        - name: Tag image
-          run: docker tag my-website aayushgupta7725/my-website:latest
+      - name: Tag image
+        run: docker tag my-website aayushgupta7725/my-website:latest
 
-        - name: Push image to Docker Hub
-          run: docker push aayushgupta7725/my-website:latest
+      - name: Push image to Docker Hub
+        run: docker push aayushgupta7725/my-website:latest
+        
   # This job only runs if the check job above passes
   deploy:
     needs: check
